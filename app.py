@@ -28,12 +28,23 @@ st.markdown(
     }
     .stButton > button {
         border: 1px solid rgba(204,255,0,0.5);
+        font-weight: 700;
         transition: box-shadow .15s ease, border-color .15s ease;
     }
     .stButton > button:hover {
         border-color: #CCFF00;
         box-shadow: 0 0 10px rgba(204,255,0,0.6), 0 0 24px rgba(204,255,0,0.25);
         color: #CCFF00;
+    }
+    .stButton > button[kind="primary"],
+    .stButton > button[data-testid="baseButton-primary"] {
+        color: #06210f !important;
+        font-weight: 800 !important;
+        text-shadow: none;
+    }
+    .stButton > button[kind="primary"]:hover,
+    .stButton > button[data-testid="baseButton-primary"]:hover {
+        color: #06210f !important;
     }
     div[data-testid="stMetric"] {
         background: rgba(204,255,0,0.05);
