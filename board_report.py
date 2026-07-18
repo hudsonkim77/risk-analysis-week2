@@ -95,7 +95,7 @@ def render(result):
             {"단서": "워치리스트", "발견": "진행 프로젝트 전건이 해지된 협력사 15개사 확인"},
         ]
     )
-    st.dataframe(cause_df, use_container_width=True, hide_index=True)
+    st.dataframe(cause_df, width="stretch", hide_index=True)
     st.markdown("> **\"저가에 낚여, 감당 못 할 업체에게 일을 맡기고 있었다.\"**")
 
     st.markdown("### 결언(제안) — 무엇을 할 것인가 (8~10)")
@@ -105,11 +105,11 @@ def render(result):
         "낙찰가율(35%) + 신용등급(30%) + 기업규모(20%) + 업종(15%) 가중합산. 각 요인 점수는 "
         "**해당 구간에서 실제로 관측된 중도해지율**을 그대로 사용."
     )
-    st.plotly_chart(chart_8_scoring_backtest(result), use_container_width=True)
+    st.plotly_chart(chart_8_scoring_backtest(result), width="stretch")
 
     st.markdown("**Critical vs High 원인 분석 (심화)**")
     table, stats = _tier_cause_table(result)
-    st.dataframe(table, use_container_width=True)
+    st.dataframe(table, width="stretch")
     st.info(
         f"Critical+High의 **{stats['ch_small']:.1f}%가 중소기업·소상공인**이며, "
         f"**신용등급 BB 이하는 Medium·Low에 {stats['ml_bb_below']:.0f}%** (Critical+High는 "
@@ -122,7 +122,7 @@ def render(result):
         "2. **낙찰가율 연동 차등 이행보증**: 저가일수록 보증금 상향\n"
         "3. **최저가낙찰제 → 가중평가 낙찰제**: 가격 60% + 평가등급 30% + 재무건전성 10%"
     )
-    st.plotly_chart(chart_9_bid_reform_impact(result), use_container_width=True)
+    st.plotly_chart(chart_9_bid_reform_impact(result), width="stretch")
 
     st.markdown("#### 10. 리스크 관리 실행 로드맵")
     roadmap_df = pd.DataFrame(
@@ -132,7 +132,7 @@ def render(result):
             {"단계": "Phase 3 · 91~180일+", "핵심 과제": "반기평가에 스코어 반영, 등급개선 인센티브, 월간 대시보드 정례 보고"},
         ]
     )
-    st.dataframe(roadmap_df, use_container_width=True, hide_index=True)
+    st.dataframe(roadmap_df, width="stretch", hide_index=True)
 
     st.markdown("### 결론 — 회사 영향 요약")
     concl_df = pd.DataFrame(
@@ -143,10 +143,10 @@ def render(result):
             {"관점": "목표", "내용": "중도해지율 40% → 1년 내 32% → 2년 내 25%"},
         ]
     )
-    st.dataframe(concl_df, use_container_width=True, hide_index=True)
+    st.dataframe(concl_df, width="stretch", hide_index=True)
     st.caption("본 리포트는 합성(synthetic) 데이터 기반이며, 가정 수치는 회사 실제 상황에 맞춰 조정 가능합니다.")
 
     st.write("")
-    if st.button("← 처음으로 돌아가기", use_container_width=False, key="back_bottom"):
+    if st.button("← 처음으로 돌아가기", width="content", key="back_bottom"):
         st.session_state.show_report = False
         st.rerun()

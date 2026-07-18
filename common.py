@@ -160,7 +160,7 @@ def stacked_status_bar(rows, x_title=""):
         yaxis=dict(autorange="reversed", title=x_title),
     )
     _styled(fig, height=80 + 50 * len(rows))
-    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+    st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 
     cols = st.columns(len(rows))
     for c, r in zip(cols, rows):
@@ -209,7 +209,7 @@ def trend_line_chart():
         ),
     )
     _styled(fig, height=320, legend=False)
-    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": "hover"})
+    st.plotly_chart(fig, width="stretch", config={"displayModeBar": "hover"})
 
     st.write("")
     others = [("품질점수", "#1baf7a"), ("납기준수율", "#4a3aa7")]
@@ -255,7 +255,7 @@ def scatter_credit_vs_term():
         ],
     )
     _styled(fig, height=460)
-    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": "hover"})
+    st.plotly_chart(fig, width="stretch", config={"displayModeBar": "hover"})
 
 
 def risk_table():
@@ -270,7 +270,7 @@ def risk_table():
     })
     df = df[["협력사ID", "전문분야", "규모", "최초등급", "등급변화", "진행PJ", "해지율(%)",
              "평균신용도", "평균품질", "평균납기", "낙찰률(%)"]]
-    st.dataframe(df, use_container_width=True, hide_index=True)
+    st.dataframe(df, width="stretch", hide_index=True)
 
 
 def scoreboard(vendors):
@@ -328,7 +328,7 @@ def weights_chart():
         bargap=0.35,
     )
     _styled(fig, height=220, legend=False)
-    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+    st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 
 
 def score_distribution_chart():
@@ -376,7 +376,7 @@ def score_distribution_chart():
                            showarrow=False, xanchor="left", font=dict(size=12, color="#898781"))],
     )
     _styled(fig, height=320, legend=True)
-    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": "hover"})
+    st.plotly_chart(fig, width="stretch", config={"displayModeBar": "hover"})
 
 
 def backtest_chart():
@@ -406,7 +406,7 @@ def backtest_chart():
         bargap=0.5,
     )
     _styled(fig, height=300, legend=False)
-    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+    st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 
 
 def impact_scenario_chart(current_rate, new_rate):
@@ -435,7 +435,7 @@ def impact_scenario_chart(current_rate, new_rate):
                            showarrow=False, xanchor="left", font=dict(size=12, color="#898781"))],
     )
     _styled(fig, height=340, legend=False)
-    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+    st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 
 
 def kpi_target_chart(periods, targets):
@@ -469,7 +469,7 @@ def kpi_target_chart(periods, targets):
         ),
     )
     _styled(fig, height=300, legend=False)
-    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+    st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 
 
 def critical_tier_table(n=15):
@@ -485,4 +485,4 @@ def critical_tier_table(n=15):
     })
     df = df[["협력사ID", "전문분야", "규모", "최초등급", "평균신용도", "평균낙찰가율",
              "진행PJ", "해지건수", "실제해지율(%)", "리스크스코어"]]
-    st.dataframe(df, use_container_width=True, hide_index=True)
+    st.dataframe(df, width="stretch", hide_index=True)

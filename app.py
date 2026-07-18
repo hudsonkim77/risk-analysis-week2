@@ -69,11 +69,11 @@ with title_col:
 with btn_col:
     st.write("")
     if st.session_state.show_report:
-        if st.button("← 처음으로 돌아가기", use_container_width=True):
+        if st.button("← 처음으로 돌아가기", width="stretch"):
             st.session_state.show_report = False
             st.rerun()
     else:
-        if st.button("📄 이사회 제출용 분석리포트", use_container_width=True, type="primary"):
+        if st.button("📄 이사회 제출용 분석리포트", width="stretch", type="primary"):
             st.session_state.show_report = True
             st.rerun()
 
@@ -96,5 +96,5 @@ else:
             render_watchlist(result)
         else:
             fig = chart_fn(result)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
         st.caption(CHART_NOTES[title])
