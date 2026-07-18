@@ -8,7 +8,7 @@ import streamlit as st
 
 import board_report
 import pipeline
-from charts_express import ALL_CHARTS
+from charts_express import ALL_CHARTS, CHART_NOTES, render_watchlist
 
 st.set_page_config(page_title="구매 협력사 성과·리스크 분석", page_icon="📊", layout="wide")
 
@@ -92,5 +92,9 @@ else:
 
     for title, chart_fn in ALL_CHARTS:
         st.subheader(title)
-        fig = chart_fn(result)
-        st.plotly_chart(fig, use_container_width=True)
+        if chart_fn is None:
+            render_watchlist(result)
+        else:
+            fig = chart_fn(result)
+            st.plotly_chart(fig, use_container_width=True)
+        st.caption(CHART_NOTES[title])
