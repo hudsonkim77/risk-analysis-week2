@@ -201,6 +201,19 @@ def build():
     backtest = backtest.sort_values("tier").reset_index(drop=True)
     backtest["tier"] = backtest["tier"].astype(str)
 
+    # ---- 워치리스트: 실제 해지 이력(projects>=2, terminated>=1)이 있는 협력사 중
+    #      리스크 스코어 상위 5개사. 표본이 1건뿐인 "우연한 100% 해지"를 걸러내고,
+    #      모델 스코어와 실제 이력이 함께 뒷받침되는 협력사만 남긴다. ----
+    credible = scored[(scored["projects"] >= 2) & (scored["terminated"] >= 1)]
+    watchlist = (
+        credible.sort_values("riskScore", ascending=False)
+        .head(5)
+        .reset_index().rename(columns={"협력사ID": "id"})[
+            ["id", "specialty", "size", "initialGrade", "avgCredit", "avgBidRatio",
+             "projects", "terminated", "termRate", "riskScore", "tier"]
+        ]
+    )
+
     return {
         "kpi": kpi,
         "by_size": by_size.to_dict("records"),
@@ -214,4 +227,5 @@ def build():
         "median_credit": median_credit,
         "scoring_cutoffs": {"q1": float(q1), "q2": float(q2), "q3": float(q3)},
         "scoring_backtest": backtest.to_dict("records"),
+        "watchlist": watchlist.to_dict("records"),
     }

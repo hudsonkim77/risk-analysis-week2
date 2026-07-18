@@ -47,6 +47,7 @@ TREND = _result["trend"]
 SCATTER = _result["scatter"]              # 프로젝트 1건 이상 수행한 협력사 전체
 RISK_VENDORS = _result["risk_vendors"]    # 중도해지 이력 보유 상위 15개사
 VENDOR_SCORES = _result["vendor_scores"]  # 리스크 스코어링 모델 산출 결과
+WATCHLIST = _result["watchlist"]          # 실적+스코어 동시 검증된 상위 5개사 (7번 스코어보드)
 
 MEDIAN_CREDIT = _result["median_credit"]
 
@@ -116,10 +117,10 @@ ANALYSIS_ITEMS = [
     {
         "no": 7,
         "title": "고위험 협력사 워치리스트",
-        "subtitle": "진행 프로젝트 전건 중도해지 15개사",
+        "subtitle": "리스크 스코어 상위 5개사 스코어카드",
         "kind": "분석",
         "page": "views/7_고위험_워치리스트.py",
-        "headline": "전건 해지 협력사 15개사 상세 프로필",
+        "headline": "물류/운송 3개사 포함 — 모델 예측과 실제 해지 이력이 겹치는 Top 5",
     },
     {
         "no": 8,

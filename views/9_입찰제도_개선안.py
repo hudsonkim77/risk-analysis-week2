@@ -64,6 +64,12 @@ new_rate = round(new_total_term / d.KPI["total_projects"] * 100, 1)
 
 common.impact_scenario_chart(d.KPI["term_rate"], new_rate)
 
+common.chart_note(
+    f"첫 막대(현재 {d.KPI['term_rate']}%)에서 초록 막대(개선 효과 {new_rate - d.KPI['term_rate']:.1f}%p)만큼 깎여 "
+    f"마지막 막대(개선 후 {new_rate}%)로 떨어지는 흐름입니다. 저가입찰 구간 하나만 정상화해도 전체 해지율이 "
+    "10%p 넘게 줄어들 수 있다는 뜻입니다."
+)
+
 common.callout(
     f"저가입찰(&lt;0.85) 88건의 해지율이 적정가 구간 수준(17.4%)까지 낮아진다면, 해지 건수는 "
     f"{low_bid_actual_term}건 → {projected_low_bid_term}건(약 {saved}건 감소)이 되어 "
