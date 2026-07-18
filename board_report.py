@@ -73,7 +73,7 @@ def render(result):
         "본 보고서 문제의 출발점이다."
     )
 
-    st.markdown("### 1막 — 무슨 일이 일어나고 있는가")
+    st.markdown("### 서론(문제제기) — 무엇이 문제인가")
     c1, c2, c3 = st.columns(3)
     c1.metric("정상완료율", f"{kpi['normal_rate']}%")
     c2.metric("지연완료율", f"{kpi['delayed_rate']}%")
@@ -84,7 +84,7 @@ def render(result):
         "**구매 프로세스 자체의 구조적 문제**로 해석해야 한다."
     )
 
-    st.markdown("### 2막 — 원인 추적 (분석 1~7)")
+    st.markdown("### 분석 — 원인 추적 (1~7)")
     cause_df = pd.DataFrame(
         [
             {"단서": "낙찰가율", "발견": "저가입찰(<0.85) 해지율 53.4% vs 적정가(0.95~1.05) 17.4% — 3배 차이"},
@@ -98,7 +98,7 @@ def render(result):
     st.dataframe(cause_df, use_container_width=True, hide_index=True)
     st.markdown("> **\"저가에 낚여, 감당 못 할 업체에게 일을 맡기고 있었다.\"**")
 
-    st.markdown("### 3막 — 대안 (제언 8~10)")
+    st.markdown("### 결언(제안) — 무엇을 할 것인가 (8~10)")
 
     st.markdown("#### 8. 협력사 리스크 스코어링 모델")
     st.markdown(
