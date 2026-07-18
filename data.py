@@ -71,7 +71,6 @@ ANALYSIS_ITEMS = [
         "title": "저가 입찰의 위험",
         "subtitle": "낙찰가율 구간별 완수상태",
         "kind": "분석",
-        "page": "views/1_저가입찰_리스크.py",
         "headline": "저가입찰(<0.85) 중도해지율 53.4% — 적정가 구간의 3배",
     },
     {
@@ -79,7 +78,6 @@ ANALYSIS_ITEMS = [
         "title": "신용등급별 리스크",
         "subtitle": "최초 신용등급 AAA~CCC 별 완수상태",
         "kind": "분석",
-        "page": "views/2_신용등급_리스크.py",
         "headline": "AAA 0% → CCC 100%, 등급과 해지율의 선형 관계",
     },
     {
@@ -87,7 +85,6 @@ ANALYSIS_ITEMS = [
         "title": "기업 규모별 리스크",
         "subtitle": "대기업/중견/중소/소상공인 별 완수상태",
         "kind": "분석",
-        "page": "views/3_기업규모_리스크.py",
         "headline": "소상공인 48.5% vs 대기업 0%",
     },
     {
@@ -95,7 +92,6 @@ ANALYSIS_ITEMS = [
         "title": "업종별 리스크",
         "subtitle": "전문분야(카테고리) 별 완수상태",
         "kind": "분석",
-        "page": "views/4_업종별_리스크.py",
         "headline": "건설/설비 52.8%로 최다 리스크 업종",
     },
     {
@@ -103,7 +99,6 @@ ANALYSIS_ITEMS = [
         "title": "협력사 평가지표 추이",
         "subtitle": "2023H1~2025H2 반기별 평균 점수",
         "kind": "분석",
-        "page": "views/5_평가지표_추이.py",
         "headline": "신용도점수 6개 반기 연속 하락 (63.5 → 58.8)",
     },
     {
@@ -111,7 +106,6 @@ ANALYSIS_ITEMS = [
         "title": "신용도 vs 중도해지율",
         "subtitle": "협력사 99개 산점도",
         "kind": "분석",
-        "page": "views/6_신용도_vs_해지율.py",
         "headline": "중앙값 미만 구간에 해지 사례 밀집",
     },
     {
@@ -119,7 +113,6 @@ ANALYSIS_ITEMS = [
         "title": "고위험 협력사 워치리스트",
         "subtitle": "리스크 스코어 상위 5개사 스코어카드",
         "kind": "분석",
-        "page": "views/7_고위험_워치리스트.py",
         "headline": "물류/운송 3개사 포함 — 모델 예측과 실제 해지 이력이 겹치는 Top 5",
     },
     {
@@ -127,7 +120,6 @@ ANALYSIS_ITEMS = [
         "title": "협력사 리스크 스코어링 모델",
         "subtitle": "4개 요인 가중합산 → 99개사 등급화 + 백테스트",
         "kind": "제언",
-        "page": "views/8_리스크_스코어링_모델.py",
         "headline": "Critical 등급 실제 해지율 59.4% vs Low 등급 17.4%",
     },
     {
@@ -135,7 +127,6 @@ ANALYSIS_ITEMS = [
         "title": "저가 입찰 제도 개선안",
         "subtitle": "이상저가 심사 · 차등 이행보증 · 가중평가 낙찰제",
         "kind": "제언",
-        "page": "views/9_입찰제도_개선안.py",
         "headline": "최저가낙찰 구조를 바꾸지 않으면 해지율은 반복된다",
     },
     {
@@ -143,7 +134,6 @@ ANALYSIS_ITEMS = [
         "title": "리스크 관리 실행 로드맵",
         "subtitle": "90일 실행계획 · 거버넌스 · 재무적 임팩트",
         "kind": "제언",
-        "page": "views/10_실행_로드맵.py",
         "headline": "40% → 2년 내 25% 목표, 단계별 실행안",
     },
 ]

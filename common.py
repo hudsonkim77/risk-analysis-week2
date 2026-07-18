@@ -1,12 +1,9 @@
-"""페이지 공통 유틸: 스타일, 뒤로가기 링크, 재사용 차트 컴포넌트."""
+"""페이지 공통 유틸: 스타일, 재사용 차트/테이블 컴포넌트."""
 
 import streamlit as st
 import plotly.graph_objects as go
 
 import data as d
-
-HOME_PATH = "views/0_home.py"
-
 
 FONT_FAMILY = "'Segoe UI', 'Pretendard', -apple-system, system-ui, sans-serif"
 
@@ -122,11 +119,6 @@ def _styled(fig, height=360, legend=True):
     fig.update_xaxes(showgrid=True, gridcolor="rgba(128,128,128,0.14)", zeroline=False)
     fig.update_yaxes(showgrid=True, gridcolor="rgba(128,128,128,0.14)", zeroline=False)
     return fig
-
-
-def back_home_button():
-    st.page_link(HOME_PATH, label="처음으로", icon="🏠")
-    st.write("")
 
 
 def callout(text: str, good: bool = False):
